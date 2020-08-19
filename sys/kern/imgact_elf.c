@@ -2679,7 +2679,7 @@ __elfN(stackgap)(struct image_params *imgp, u_long *stack_base)
 	u_long range, rbase, gap;
 	int pct;
 
-	if ((imgp->map_flags & MAP_ASLR) == 0)
+	if (imgp->map_flags == 0)
 		return;
 	pct = __elfN(aslr_stack_gap);
 	if (pct == 0)
